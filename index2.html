@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="ecaibtweet.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+    </head>
+
+    <body>
+
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8">
+                    <div class="jumbotron well">
+                        <h2>
+                            ECAIBTweet
+                        </h2>
+                        <p>
+                            Este es el proyecto de ECAIBTweet con AngularJS, Firebase y Bootstrap. Puedes mirar la base de datos pinchando en el botón.
+                        </p>
+                        <p>
+                            <a class="btn btn-primary btn-large" href="https://ecaibtweet.firebaseio.com/">Firebase ECAIBtweet</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <form role="form">
+                        <div class="form-group">
+    
+                            <label for="exampleInputEmail1">
+                                Nombre de usuario:
+                            </label>
+                            <input class="form-control" id="exampleInputEmail1" type="email" />
+                        </div>
+    
+                        <button type="submit" class="btn btn-default" ng-model="userName"   >
+                            Entrar
+                        </button>
+                    </form>
+                    <ul class="nav nav-pills">
+                        <li class="active">
+                            <a href="#"> <span class="badge pull-right">42</span> Seguidos </a>
+                        </li>
+                        <li>
+                            <a href="#"> <span class="badge pull-right">16</span> Seguidores </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div ng-app="sampleApp" ng-controller="Tweets">
+                    <div class="col-md-6">
+                            <p><input ng-model="message" type="text"></p>
+                            <p><input value="Envia el Twitcaib!" type="submit" ng-click="addMessage()"></p>
+    
+    
+                        <a class="list-group-item active">Tweets</a>
+    
+                        <ul class="list-group">
+                            <div class="panel panel-default">
+                                <div class="panel-body"><li class="list-group-item" ng-repeat="message in messages" >{{ message.userName }}: {{ message.text }}</li></div>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-2">
+                    <form role="form">
+                        <div class="form-group">
+    
+                            <label for="exampleInputEmail1">
+                                Nombre de usuario a seguir:
+                            </label>
+                            <input class="form-control" id="exampleInputEmail" type="email" />
+                        </div>
+    
+                        <button type="submit" class="btn btn-default">
+                            Seguir usuario
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p align="center">Diseñado y sufrido por Leonardo Martínez</p>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>
